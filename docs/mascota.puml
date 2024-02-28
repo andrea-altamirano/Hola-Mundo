@@ -1,0 +1,68 @@
+@startuml MachineStereotypeFontName
+
+class Mascota 
+class Alimento
+class Carne
+
+
+class Alimento 
+class Juguete
+class Pelota
+
+package Bebidas {
+class Agua
+class Jugo
+}
+
+package Ropaje{
+class Camisa
+class Sueter
+}
+
+package Emociones {
+class Alegria
+class Tristeza
+}
+
+package Limpieza1 {
+class Baño
+class Jabon
+}
+
+class Pelota
+class Descanso 
+class Cama
+class Sofa
+class Limpieza 
+class Bebida 
+class Ropa 
+class Emocion 
+
+Descanso --o "1" Mascota
+Cama "1"--* "1"Descanso
+Sofa "1"--* "1"Descanso
+Bebida "1"--o "1"Mascota
+Agua "1"--|> "1" Bebida
+Jugo "1" --|> "1" Bebida
+Limpieza --o Mascota
+Baño --* Limpieza
+Jabon --* Limpieza
+Ropa --o Mascota
+Camisa --|> Ropa
+Sueter --|> Ropa
+Emocion "1..*" --o "1" Mascota
+Alegria "1"--|> "1" Emocion
+Tristeza "1" --|> "1" Emocion
+Pelota "1" --|> "1" Juguete
+
+
+
+Alimento "1 "--o "1" Mascota 
+Mascota "1" o-- "1" Juguete
+Carne "1" --|> "1" Alimento
+
+
+
+
+@enduml 
+
